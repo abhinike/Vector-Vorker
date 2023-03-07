@@ -12,6 +12,7 @@ class GoogleSignInScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         const SizedBox(
           height: 160,
@@ -19,9 +20,9 @@ class GoogleSignInScreen extends StatelessWidget {
         const Image(
           image: AssetImage(signinpng),
         ),
-        const SizedBox(
-          height: 40,
-        ),
+        // const SizedBox(
+        //   height: 40,
+        // ),
         Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(22, 40, 0, 40),
@@ -52,9 +53,7 @@ class GoogleSignInScreen extends StatelessWidget {
           margin: EdgeInsets.all(16),
           child:ElevatedButton(
             onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
-                return HomeScreen();
-              }));
+              Navigator.of(context).pushNamed('/second');
             },
             child: Row(
 

@@ -21,10 +21,15 @@ class SearchScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(20.0),
           color: Colors.grey[200],
         ),
-        child: Align(
+        child: const Align(
           alignment: Alignment.center,
           child: TextField(
+            textAlignVertical: TextAlignVertical.center,
+
+
             decoration: InputDecoration(
+              counterStyle: TextStyle(fontSize: 50),
+              labelStyle: TextStyle(fontSize: 30),
 
               border: InputBorder.none,
               prefixIcon: Icon(Icons.search, size: 30,),

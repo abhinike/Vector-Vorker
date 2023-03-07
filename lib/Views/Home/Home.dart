@@ -2,6 +2,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:first_flutter/Views/Components/Title.dart';
 import 'package:first_flutter/Views/Home/SearchSection.dart';
 import 'package:first_flutter/Views/Home/WorkerSectionGrid.dart';
+import 'package:first_flutter/Views/chat%20screen/chat_screen.dart';
 import 'package:first_flutter/Views/Response.dart';
 import 'package:flutter/material.dart';
 
@@ -29,21 +30,29 @@ class _homeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: Text("Welcome"),
+        title: const Text("Welcome"),
+        actions: const [
+          Icon(Icons.bed, size: 30),
+          SizedBox(width: 10,),
+          Icon(Icons.person, size: 30,),
+          SizedBox(width: 20,)
+        ],
       ),
       backgroundColor: Colors.white,
 
       body: Container(
         child: ListView(
-          children: [
-            SearchScreen(),
-           WorkSectionGrid(),
-            // Repsonse2(),
-          ],
-        ),
+          children:  const [
+             SearchScreen(),
+            WorkSectionGrid(),
+
+  ]),
       ),
 
+
+
       bottomNavigationBar: CurvedNavigationBar(
+        height: 60,
         backgroundColor: Colors.white,
         color: Colors.blue,
 
@@ -51,6 +60,7 @@ class _homeScreenState extends State<HomeScreen> {
           Icon(Icons.home, color: Colors.white,),
           Icon(Icons.person, color: Colors.white,),
           Icon(Icons.settings, color : Colors.white),
+          Icon(Icons.window, color : Colors.white),
         ],
         onTap: (index){
           print(index);
@@ -82,10 +92,13 @@ class _homeScreenState extends State<HomeScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
-        tooltip: 'Increment',
-        child: const Icon(Icons.call),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        onPressed: (){
+          Navigator.of(context).pushNamed('/chat');
+        },
+        child: Icon(Icons.message),
+      ),
+
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

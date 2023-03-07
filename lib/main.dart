@@ -1,5 +1,6 @@
-import 'package:first_flutter/Util/MyColors.dart';
-import 'package:first_flutter/Views/Home/Home.dart';
+import 'package:first_flutter/Navigation/route_generator.dart';
+// import 'package:first_flutter/Util/MyColors.dart';
+// import 'package:first_flutter/Views/Home/Home.dart';
 import 'package:first_flutter/Views/GoogleSignIn.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: SignUpScreen(),
-      home: const MyHomePage(title: 'Hello Abhishek'),
+      initialRoute: '/',
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }

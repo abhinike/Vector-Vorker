@@ -28,7 +28,7 @@ class WorkSectionGrid extends StatelessWidget {
           ),
           Container(
 
-            child: Center(child: MyCard(imagePath: carpenter,title: "Carpenter", )),
+            child: Center(child: MyCard(imagePath: carpenter  ,title: "Carpenter", )),
           ),
           Container(
 
@@ -54,14 +54,17 @@ class MyCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(borderRadius),
       ),
       child: Container(
+
         margin: EdgeInsets.all(8),
         child:Column(
 
+
           children: [
             Image.asset(
+
               imagePath,
               fit: BoxFit.fitWidth,
-              height: 140,
+              height: 120,
             ),
             Center(
               child: Text(this.title, style: TextStyle(fontSize: 16),),
