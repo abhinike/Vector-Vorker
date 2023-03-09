@@ -18,13 +18,18 @@ class _ChatScreenState extends State<ChatScreen> {
   TextEditingController _controller = TextEditingController();
 
   // list of messages 
-  List<Map<String, dynamic>> messages = [];
+  List<Map<String, dynamic>> messages = [
+    // {'message': "Hi there, how can help you?"},
+  ];
 
 
   @override
   void initState() {
     DialogFlowtter.fromFile().then((instance) => dialogFlowtter = instance);
     super.initState();
+     setState(() {
+        addMessage(Message(text: DialogText(text: const ["hi there, how can i help you?"])));
+      });
   }
 
   @override

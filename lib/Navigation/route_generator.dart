@@ -1,5 +1,6 @@
 import 'package:first_flutter/Views/GoogleSignIn.dart';
 import 'package:first_flutter/Views/Home/Home.dart';
+import 'package:first_flutter/Views/Profile%20Screen/profile_screen.dart';
 import 'package:first_flutter/Views/chat%20screen/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:first_flutter/main.dart';
@@ -19,7 +20,9 @@ class RouteGenerator{
       case '/second':
         return MaterialPageRoute(builder: (BuildContext context) => HomeScreen());
       case '/chat':
-        return MaterialPageRoute(builder: (BuildContext context) => ChatScreen()); 
+        return MaterialPageRoute(builder: (BuildContext context) => ChatScreen());
+      case '/profile':
+        return MaterialPageRoute(builder: (BuildContext context) => ProfileScreen());  
 
       default :
         return MaterialPageRoute(builder: (BuildContext context) => ErrorPage());
