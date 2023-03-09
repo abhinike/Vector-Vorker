@@ -1,3 +1,4 @@
+import 'package:first_flutter/Navigation/screens.dart';
 import 'package:first_flutter/Util/Constants.dart';
 import 'package:first_flutter/Views/Home/Home.dart';
 import 'package:flutter/material.dart';
@@ -53,7 +54,7 @@ class GoogleSignInScreen extends StatelessWidget {
           margin: EdgeInsets.all(16),
           child:ElevatedButton(
             onPressed: () {
-              Navigator.of(context).pushNamed('/second');
+              Navigator.of(context).pushNamed(Screens.Home);
             },
             child: Row(
 

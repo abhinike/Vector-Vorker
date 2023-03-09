@@ -1,3 +1,4 @@
+import 'package:first_flutter/Navigation/screens.dart';
 import 'package:first_flutter/Views/GoogleSignIn.dart';
 import 'package:first_flutter/Views/Home/Home.dart';
 import 'package:first_flutter/Views/Profile%20Screen/profile_screen.dart';
@@ -17,11 +18,11 @@ class RouteGenerator{
     switch(settings.name){
       case '/':
         return MaterialPageRoute(builder: (BuildContext context)=> MyHomePage(title: "Vector Vorkers"));
-      case '/second':
+      case Screens.Home:
         return MaterialPageRoute(builder: (BuildContext context) => HomeScreen());
-      case '/chat':
+      case Screens.ChatScreen:
         return MaterialPageRoute(builder: (BuildContext context) => ChatScreen());
-      case '/profile':
+      case Screens.ProfileScreen:
         return MaterialPageRoute(builder: (BuildContext context) => ProfileScreen());  
 
       default :

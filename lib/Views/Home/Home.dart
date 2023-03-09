@@ -1,7 +1,10 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:first_flutter/Navigation/screens.dart';
 import 'package:first_flutter/Views/Components/Title.dart';
 import 'package:first_flutter/Views/Home/SearchSection.dart';
 import 'package:first_flutter/Views/Home/WorkerSectionGrid.dart';
+import 'package:first_flutter/Views/Main%20Screen/main_screen.dart';
+import 'package:first_flutter/Views/Profile%20Screen/profile_screen.dart';
 import 'package:first_flutter/Views/chat%20screen/chat_screen.dart';
 import 'package:first_flutter/Views/Response.dart';
 import 'package:flutter/material.dart';
@@ -16,16 +19,26 @@ class HomeScreen extends StatefulWidget {
 
 class _homeScreenState extends State<HomeScreen> {
 
-  var selected_item = 0;
 
-  @override
-  void setState(VoidCallback fn) {
-    // TODO: implement setState
-    super.setState(()=> {
-      selected_item = 1
-    });
+  int _currentindex = 0;
 
-  }
+  final _screens = <Widget>[
+    MainScreen(),
+    ProfileScreen(),
+    Center(child: Text("Setting"),),
+    Center(child: Text("Grid"),),
+
+  ];
+
+  // @override
+  // void setState(VoidCallback fn) {
+  //   // TODO: implement setState
+  //   super.setState(()=> {
+  //     selected_item = 1
+  //   });
+  //
+  // }
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -40,13 +53,9 @@ class _homeScreenState extends State<HomeScreen> {
       ),
       backgroundColor: Colors.white,
 
-      body: Container(
-        child: ListView(
-          children:  const [
-             SearchScreen(),
-            WorkSectionGrid(),
-
-  ]),
+      body: IndexedStack(
+        index: _currentindex,
+        children: _screens,
       ),
 
 
@@ -63,7 +72,9 @@ class _homeScreenState extends State<HomeScreen> {
           Icon(Icons.window, color : Colors.white),
         ],
         onTap: (index){
-          print(index);
+          setState(() {
+            _currentindex = index;
+          });
         },
 
       ),
@@ -93,7 +104,7 @@ class _homeScreenState extends State<HomeScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          Navigator.of(context).pushNamed('/chat');
+          Navigator.of(context).pushNamed(Screens.ChatScreen);
         },
         child: Icon(Icons.message),
       ),
